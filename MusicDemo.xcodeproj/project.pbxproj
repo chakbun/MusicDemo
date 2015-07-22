@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF00528C1B5F7876001D2E08 /* JRMusicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF00528B1B5F7876001D2E08 /* JRMusicManager.m */; };
 		DFCAB1AC1ACE2FE600317FC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCAB1AB1ACE2FE600317FC7 /* main.m */; };
 		DFCAB1AF1ACE2FE600317FC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCAB1AE1ACE2FE600317FC7 /* AppDelegate.m */; };
 		DFCAB1B21ACE2FE600317FC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFCAB1B11ACE2FE600317FC7 /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF00528A1B5F7876001D2E08 /* JRMusicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRMusicManager.h; sourceTree = "<group>"; };
+		DF00528B1B5F7876001D2E08 /* JRMusicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRMusicManager.m; sourceTree = "<group>"; };
 		DFCAB1A61ACE2FE600317FC7 /* MusicDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFCAB1AA1ACE2FE600317FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFCAB1AB1ACE2FE600317FC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -89,6 +92,8 @@
 				DFCAB1B61ACE2FE600317FC7 /* Images.xcassets */,
 				DFCAB1B81ACE2FE600317FC7 /* LaunchScreen.xib */,
 				DFCAB1A91ACE2FE600317FC7 /* Supporting Files */,
+				DF00528A1B5F7876001D2E08 /* JRMusicManager.h */,
+				DF00528B1B5F7876001D2E08 /* JRMusicManager.m */,
 			);
 			path = MusicDemo;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				DFCAB1B21ACE2FE600317FC7 /* ViewController.m in Sources */,
 				DFCAB1AF1ACE2FE600317FC7 /* AppDelegate.m in Sources */,
 				DFCAB1AC1ACE2FE600317FC7 /* main.m in Sources */,
+				DF00528C1B5F7876001D2E08 /* JRMusicManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +420,7 @@
 				DFCAB1CB1ACE2FE600317FC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFCAB1CC1ACE2FE600317FC7 /* Build configuration list for PBXNativeTarget "MusicDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +429,7 @@
 				DFCAB1CE1ACE2FE600317FC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

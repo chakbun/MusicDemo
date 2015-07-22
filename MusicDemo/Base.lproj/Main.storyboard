@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7KY-ND-H1Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7KY-ND-H1Y">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -33,11 +34,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0if-Jr-SLn">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="V4p-w3-Dos"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="qKa-0l-ztg"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7Y-P8-UbA">
                                 <rect key="frame" x="279" y="71" width="42" height="30"/>
+                                <color key="backgroundColor" red="0.12566436080000001" green="0.59347369500000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="1km-pT-rTL"/>
+                                    <constraint firstAttribute="height" constant="55" id="7h5-V9-8Sm"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Music">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1km-pT-rTL"/>
+                                        <exclude reference="7h5-V9-8Sm"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1km-pT-rTL"/>
+                                        <include reference="7h5-V9-8Sm"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="musicButtonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="McQ-8N-hrn"/>
                                 </connections>
@@ -45,12 +72,50 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0if-Jr-SLn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="AIg-uo-eeu"/>
+                            <constraint firstItem="0if-Jr-SLn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="att-cV-5Hp"/>
                             <constraint firstItem="h7Y-P8-UbA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="51" id="cRX-DU-HfK"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="h7Y-P8-UbA" secondAttribute="bottom" constant="170" id="dU2-EL-f10"/>
+                            <constraint firstItem="h7Y-P8-UbA" firstAttribute="top" secondItem="0if-Jr-SLn" secondAttribute="bottom" constant="13" id="fEc-tb-ycC"/>
                             <constraint firstAttribute="centerX" secondItem="h7Y-P8-UbA" secondAttribute="centerX" id="hFf-78-71O"/>
+                            <constraint firstItem="h7Y-P8-UbA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-5" id="nPg-4g-xSD"/>
+                            <constraint firstAttribute="trailing" secondItem="0if-Jr-SLn" secondAttribute="trailing" id="sQp-l7-wKG"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="h7Y-P8-UbA" secondAttribute="bottom" constant="499" id="vKH-OQ-dWf"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="0if-Jr-SLn"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="AIg-uo-eeu"/>
+                                <exclude reference="att-cV-5Hp"/>
+                                <exclude reference="sQp-l7-wKG"/>
+                                <exclude reference="fEc-tb-ycC"/>
+                                <exclude reference="nPg-4g-xSD"/>
+                                <exclude reference="dU2-EL-f10"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="0if-Jr-SLn"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="AIg-uo-eeu"/>
+                                <include reference="att-cV-5Hp"/>
+                                <include reference="sQp-l7-wKG"/>
+                                <exclude reference="cRX-DU-HfK"/>
+                                <include reference="fEc-tb-ycC"/>
+                                <exclude reference="hFf-78-71O"/>
+                                <include reference="nPg-4g-xSD"/>
+                                <include reference="dU2-EL-f10"/>
+                                <exclude reference="vKH-OQ-dWf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="3rt-UJ-6cN"/>
+                    <connections>
+                        <outlet property="musicTableView" destination="0if-Jr-SLn" id="s2l-8O-ti0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
