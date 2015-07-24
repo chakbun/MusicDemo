@@ -94,4 +94,34 @@
     [controller presentViewController:mediaPicker animated:YES completion:nil];
 }
 
+- (void)setApplicationQueueWithItems:(NSArray *)items {
+    MPMediaItemCollection *collection = [[MPMediaItemCollection alloc] initWithItems:items];
+    [[self applicationMusicPlayer] setQueueWithItemCollection:collection];
+}
+
+- (void)setApplicationQueueWithItemCollection:(MPMediaItemCollection *)collection {
+    [[self applicationMusicPlayer] setQueueWithItemCollection:collection];
+}
+
+- (void)setApplicationNowPlayingItem:(MPMediaItem *)item {
+    [[self applicationMusicPlayer] setNowPlayingItem:item];
+}
+
+- (void)setMediaItemInApplicaiton:(MPMediaItem *)item {
+    MPMediaItemCollection *collection = [[MPMediaItemCollection alloc] initWithItems:@[item]];
+    MPMediaItem *nowItem = [collection representativeItem];
+    
+    [[self applicationMusicPlayer] setQueueWithItemCollection:collection];
+    [[self applicationMusicPlayer] setNowPlayingItem:nowItem];
+    [[self applicationMusicPlayer] prepareToPlay];
+}
+
+- (void)playInApplication {
+    [[self applicationMusicPlayer] play];
+}
+
+- (void)stopInApplication {
+    [[self applicationMusicPlayer] stop];
+}
+
 @end

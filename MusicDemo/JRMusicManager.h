@@ -19,4 +19,12 @@ typedef void(^ItemSelectedBlock)(BOOL isCancel, MPMediaItemCollection *mediaItem
 - (MPMusicPlayerController *)applicationMusicPlayer;
 - (MPMusicPlayerController *)systemMusicPlayer;
 - (void)goToMusicPickerWithController:(UIViewController *)controller selectCompleted:(ItemSelectedBlock)completed;
+
+- (void)setApplicationQueueWithItems:(NSArray *)items;
+- (void)setApplicationQueueWithItemCollection:(MPMediaItemCollection *)collection;
+- (void)setApplicationNowPlayingItem:(MPMediaItem *)item;
+
+- (void)setMediaItemInApplicaiton:(MPMediaItem *)item;
+- (void)playInApplication;
+- (void)stopInApplication;
 @end

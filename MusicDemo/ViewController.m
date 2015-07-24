@@ -32,6 +32,7 @@
     
     self.musicTableView.tableFooterView = [[UIView alloc] init];
     [self.musicTableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +48,7 @@
 //            volumeView.showsVolumeSlider = YES;
 //            [self.view addSubview:volumeView];
         }else {
+            
             for(MPMediaItem *item in mediaItemCollection.items) {
                 NSLog(@"%@",item.title);
                 NSLog(@"%@",item.albumTitle);
@@ -54,8 +56,10 @@
                 NSLog(@"%@",item.releaseDate);
                 NSLog(@"%ld",item.playCount);
             }
-            [self.musicPlayer setQueueWithItemCollection:mediaItemCollection];
-            [self.musicPlayer play];
+            
+            [[JRMusicManager shareManager] setApplicationQueueWithItemCollection:mediaItemCollection];
+            [[JRMusicManager shareManager] playInApplication];
+            
         }
     }];
 }
@@ -65,15 +69,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MPMediaItem *mediaItem = self.songs[indexPath.row];
     
-    MPMediaItemCollection *collection = [[MPMediaItemCollection alloc] initWithItems:@[mediaItem]];
-    MPMediaItem *item = [collection representativeItem];
-    
-    [self.musicPlayer setQueueWithItemCollection:collection];
-    [self.musicPlayer setNowPlayingItem:item];
-    
-    [self.musicPlayer prepareToPlay];
-    
-    [self.musicPlayer play];
+    [[JRMusicManager shareManager] setMediaItemInApplicaiton:mediaItem];
+    [[JRMusicManager shareManager] playInApplication];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
